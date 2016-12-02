@@ -3,6 +3,8 @@
 
 Inspired from Scott Smerchek's [Pushing to Google Container Registry from CircleCI](http://scottsmerchek.com/2015/07/24/pushing-to-google-container-registry-from-circleci/)
 
+---
+
 You need to set up your [gcloud service account](https://developers.google.com/identity/protocols/OAuth2ServiceAccount#creatinganaccount) as container dev first.
 
 Then set up credentials as environment variable in your CI/CD configuration:
