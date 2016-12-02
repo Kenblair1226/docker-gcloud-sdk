@@ -30,8 +30,8 @@ environment:
 Then you can authenticate with service account and manage k8s with kubectl:
 ```shell
 script:
-  - echo $GCLOUD_KEY | base64 -d > gcloud.json
-  - gcloud auth activate-service-account --key-file gcloud.json
+  - echo $GCLOUD_KEY | base64 -d > $GOOGLE_APPLICATION_CREDENTIALS
+  - gcloud auth activate-service-account --key-file $GOOGLE_APPLICATION_CREDENTIALS
   - gcloud container clusters get-credentials XXXXX
   - kubectl get pods
 ```
