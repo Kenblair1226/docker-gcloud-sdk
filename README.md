@@ -18,14 +18,6 @@ On OSX and Linux, you can get the base64 encoded version like this:
 cat project_name-xxxxx.json | base64
 ```
 
-Write a script that authenticates with a gcloud service account:
-auth-gcloud.sh
-```shell
-#! /bin/bash
-echo $GCLOUD_KEY | base64 -d > gcloud.json
-gcloud auth activate-service-account --key-file gcloud.json
-```
-
 And configure environment variables accordingly in your CI/CD yml file:
 ```shell
 environment:
@@ -35,10 +27,11 @@ environment:
   GOOGLE_APPLICATION_CREDENTIALS: gcloud.json
 ```
 
-Then you can manage k8s with kubectl:
+Then you can authenticate with service account and manage k8s with kubectl:
 ```shell
 script:
-  - auth-gcloud.sh
+  - echo $GCLOUD_KEY | base64 -d > gcloud.json
+  - gcloud auth activate-service-account --key-file gcloud.json
   - gcloud container clusters get-credentials XXXXX
   - kubectl get pods
 ```
