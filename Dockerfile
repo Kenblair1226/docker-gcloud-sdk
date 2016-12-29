@@ -1,4 +1,4 @@
-FROM blair1226/alpine-node
+FROM node:alpine
 MAINTAINER Ken Chen<blair1226@gmail.com>
 
 RUN apk --update --no-cache add python openssl openssh bash ca-certificates
