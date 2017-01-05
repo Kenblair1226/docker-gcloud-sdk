@@ -1,7 +1,7 @@
 FROM node:6-alpine
 MAINTAINER Ken Chen<blair1226@gmail.com>
 
-RUN apk --update --no-cache add python openssl openssh bash ca-certificates
+RUN apk --update --no-cache add python openssl openssh bash ca-certificates libc6-compat
 
 # google cloud sdk 
 RUN wget https://dl.google.com/dl/cloudsdk/channels/rapid/google-cloud-sdk.zip && unzip google-cloud-sdk.zip && rm google-cloud-sdk.zip
