@@ -10,5 +10,5 @@ RUN google-cloud-sdk/install.sh --usage-reporting=true --path-update=true --bash
 # Finalize
 RUN mkdir /.ssh
 ENV PATH $PATH:/google-cloud-sdk/bin  
-CMD ["bash"]
+CMD ["sh"]
 
