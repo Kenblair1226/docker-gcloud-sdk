@@ -1,4 +1,4 @@
-FROM node:alpine
+FROM node:6-alpine
 MAINTAINER Ken Chen<blair1226@gmail.com>
 
 RUN apk --update --no-cache add python openssl openssh bash ca-certificates libc6-compat
