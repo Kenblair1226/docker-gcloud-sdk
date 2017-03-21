@@ -10,7 +10,5 @@ RUN google-cloud-sdk/install.sh --usage-reporting=true --path-update=true --bash
 # Finalize
 RUN mkdir /.ssh && mkdir /db_utils
 COPY . /db_utils
-COPY backup_3d /etc/periodic/daily
 ENV PATH $PATH:/google-cloud-sdk/bin  
 
-CMD crond -f
