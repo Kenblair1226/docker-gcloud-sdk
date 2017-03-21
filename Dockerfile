@@ -11,5 +11,4 @@ RUN google-cloud-sdk/install.sh --usage-reporting=true --path-update=true --bash
 RUN mkdir /.ssh && mkdir /db_utils
 COPY . /db_utils
 ENV PATH $PATH:/google-cloud-sdk/bin  
-CMD ["sh"]
 
